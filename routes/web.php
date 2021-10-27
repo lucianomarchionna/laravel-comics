@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $element = config('comics');
+    $data = [
+        'comics' => $element
+    ];
+    return view('home', $data);
 });
 
 Route::get('/characters', function () {
